@@ -1,0 +1,17 @@
+<h1><%= @artist.name %>'s Profile Page</h1>
+<div>
+    <%= button_to "Delete Artist", @artist, :method => :delete %>
+    <%= button_to "Edit Artist", edit_artist_path(@artist), :method => :get %>
+   <!-- <a href="/artists/<%= @artist.id %>/edit">Edit Artist</a>-->
+</div>
+
+</hr>
+<img class="artist-photo" src=<%= @artist.photo_url%> /> 
+<h3>Origin: <%= @artist.nationality%></h3>
+
+<h1><%= @artist.name%>'s Song List</h1>
+<ol>
+<% @artist.songs.each do |song|%>
+   <li> <%= song.title%></li>
+<% end%>
+</ol>
